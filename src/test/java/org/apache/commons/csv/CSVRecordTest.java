@@ -69,7 +69,7 @@ public class CSVRecordTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testGetStringInconsistentRecord() {
-        header.put("fourth", Integer.valueOf(4));
+        header.put("fourth", Integer.valueOf(3));
         recordWithHeader.get("fourth");
     }
 
@@ -103,7 +103,7 @@ public class CSVRecordTest {
         assertTrue(record.isConsistent());
         assertTrue(recordWithHeader.isConsistent());
 
-        header.put("fourth", Integer.valueOf(4));
+        header.put("fourth", Integer.valueOf(3));
         assertFalse(recordWithHeader.isConsistent());
     }
 
